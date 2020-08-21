@@ -87,7 +87,7 @@ main () {
             # change from WAN1 to WAN2
             ip route delete default
             ip route add default via $WAN2GW
-            /etc/init.d/openvpn stop && /etc/init.d/openvpn start
+            #/etc/init.d/openvpn stop && /etc/init.d/openvpn start
             USINGWAN=2
             RETWAN1=0
             RETWAN2=10
@@ -98,7 +98,7 @@ main () {
             ip route delete default
             ip route add default via $WAN3GW
             logger "Changing gateway to WAN3"
-            /etc/init.d/openvpn stop && /etc/init.d/openvpn start
+            #/etc/init.d/openvpn stop && /etc/init.d/openvpn start
             USINGWAN=3
             RETWAN1=0
             RETWAN2=0
@@ -111,7 +111,7 @@ main () {
         # change from WAN2 to WAN1
             ip route delete default
             ip route add default via $WAN1GW
-            /etc/init.d/openvpn stop && /etc/init.d/openvpn start
+            #/etc/init.d/openvpn stop && /etc/init.d/openvpn start
             USINGWAN=1
             send_msg "Returned from backup to WAN1"
             continue
@@ -119,7 +119,7 @@ main () {
         # change from WAN3 to WAN1
             ip route delete default
             ip route add default via $WAN1GW
-            /etc/init.d/openvpn stop && /etc/init.d/openvpn start
+            #/etc/init.d/openvpn stop && /etc/init.d/openvpn start
             USINGWAN=1
             send_msg "Returned from backup to WAN1"
             continue
@@ -127,7 +127,7 @@ main () {
         # change from WAN3 to WAN2
             ip route delete default
             ip route add default via $WAN2GW
-            /etc/init.d/openvpn stop && /etc/init.d/openvpn start
+            #/etc/init.d/openvpn stop && /etc/init.d/openvpn start
             USINGWAN=2
             send_msg "Returned from backup to WAN2"
             continue
